@@ -10,3 +10,12 @@
    É para cá que o atributo action do formulário vai apontar:
    <form action="../backend/processa-contato.php" method="post">
    =========================================================================== */
+<?php
+$nome = $_POST["nome"];
+$assunto = $_POST["assunto"];
+
+if (empty($nome)) {
+    die("Por favor, preencha seu nome.");
+}
+
+echo "Recebido! Nome: " . $nome . ", Assunto: " . $assunto;
