@@ -10,12 +10,12 @@
   </head>
 
   <body>
-    <div class="faixa-topo"></div>
-
-    <header>
-      <h1>Padaria Triguinho</h1>
-      <p>Projeto da equipe solo jacare</p>
-    </header>
+    <div class="faixa-topo">
+      <header>
+        <h1>Padaria Triguinho</h1>
+        <p>Projeto da equipe solo jacare</p>
+      </header>
+    </div>
 
     <nav>
       <ul>
@@ -40,22 +40,20 @@
         <h2>Contato</h2>
         <p>O formulário de contato entra aqui.</p>
 
-        
-	<form action="../backend/processa-contato.php" method="post">
-			<fieldset>
-				<legend>Seus dados</legend>
-				<div>
-					<label for="nome">Nome</label>
-					<input type="text" id="nome" name="nome" required>
-				</div>
-				<div>
-					<label for="assunto">Assunto</label>
-					<select id="assunto" name="assunto"> ...  </select>
-				</div>
-			</fieldset>
-			<button type="submit">Enviar</button>
-		</form>
-
+        <form action="../backend/processa-contato.php" method="post">
+          <fieldset>
+            <legend>Seus dados</legend>
+            <div>
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required>
+            </div>
+            <div>
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto"> ...  </select>
+            </div>
+          </fieldset>
+          <button type="submit">Enviar</button>
+        </form>
       </section>
     </main>
 
@@ -64,7 +62,5 @@
     </footer>
 
     <script src="js/script.js" defer></script>
-    <form action="../backend/processa-contato.php" method="post">
-
   </body>
 </html>
