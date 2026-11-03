@@ -39,3 +39,17 @@ select:focus-visible, textarea:focus-visible {
   outline: 3px solid var(--trigo);
   outline-offset: 2px;
 }
+.so-leitor {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.pular {
+  position: absolute; left: 8px; top: -60px; z-index: 20;
+  background: var(--trigo); color: var(--crosta); padding: 8px 14px;
+}
+.pular:focus { top: 8px; }
+
+/* Topo e navegação */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--crosta);
