@@ -1,55 +1,25 @@
-.faixa-topo {
-  background-color: #5B3E29;
-  min-height: 200px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+:root {
+  --crosta: #4a2c1a;
+  --crosta-clara: #6b4630;
+  --farinha: #fbf5e9;
+  --massa: #f1e4c8;
+  --trigo: #e0a33a;
+  --alecrim: #2f6b45;
+  --brasa: #a63d2f;
+  --texto: #2a1a10;
+  --fonte-titulo: "Young Serif", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Work Sans", "Segoe UI", Arial, sans-serif;
 }
 
-header h1 {
-  color: #F3E3B6;
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  margin: 0;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
-header p {
-  color: #F3E3B6;
-  opacity: 0.85;
-  margin: 4px 0 0;
-}
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  line-height: 1.9;
-  color: #000000;
-  background-color: #F3E3B6;
-  margin: 0 auto;
-  padding: 40px 20px 40px;
-}
-
-/* Títulos */
-h1, h2, h3 {
-  color: #000000;
-}
-
-a {
-  color: #88005b;
-}
-
-/* Navegue */
-nav ul {
-  padding: 30px 40px;
-}
-
-nav li {
-  display: inline-block;
-}
-
-nav a {
-  color: #88005b;
-  text-decoration: none;
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--farinha);
 }
