@@ -1,7 +1,7 @@
 :root {
 --principal: #ffbf48;
 --sobre-principal: #1b1016; /* agora ele inverte */
---apoio:
+--apoio:#ff8a7a;
 --fundo: 
 --superficie: 
 --texto: 
