@@ -53,3 +53,15 @@ select:focus-visible, textarea:focus-visible {
 .topo {
   position: sticky; top: 0; z-index: 10;
   background: var(--crosta);
+  }
+.topo__interno {
+  max-width: 1040px; margin: 0 auto; padding: 12px 20px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px;
+}
+.marca {
+  font-family: var(--fonte-titulo); font-size: 1.35rem;
+  color: var(--massa); text-decoration: none;
+}
+.topo ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.topo nav a { color: var(--massa); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.topo nav a:hover { border-bottom-color: var(--trigo); }
