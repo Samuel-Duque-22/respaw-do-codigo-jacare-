@@ -1,6 +1,6 @@
 :root {
---principal: 
---sobre-principal: 
+--principal: #ffbf48;
+--sobre-principal: #1b1016; /* agora ele inverte */
 --apoio:
 --fundo: 
 --superficie: 
