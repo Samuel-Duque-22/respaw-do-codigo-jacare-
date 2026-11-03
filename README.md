@@ -1,7 +1,8 @@
-## Equipe apenas tentando reviver — Padaria Triguinho
-sem projetos apenas o samuel fazendo o que der na telha
+# Equipe Jacaré — Padaria Triguinho
+Projeto da disciplina **ARA0062 · Desenvolvimento Web em HTML5, CSS, JavaScript
+e PHP** — Centro Universitário Newton Paiva, 2026/2.
 
-> troco nao
+> Troque o título acima pelo nome da sua equipe e pelo tema do projeto de vocês.
 > Todo o resto deste arquivo é modelo: substitua os dados de exemplo.
 
 ## Tema do projeto
@@ -12,7 +13,14 @@ Site de uma padaria com intuito de controlar vendas e cadastros de clientes. Sen
 
 **Líder:** Manoela Almeida Sanches Vieira
 
+| Nome completo | Matrícula | GitHub | Papel |
+|---|---|---|---|
+| Ana Clara Assunção Freitas | 202603075109 | Anaclarassu | integrante |
+| Gustavo Ferreira Gomes | 202603139451 |gustavotur2018| integrante |
+| Iann Lima Fontoura | 202608373394 | fontouraiann06-lgtm | integrante |
+| Manoela Almeida Sanches Vieira | 202603057887 | manuxis3 | **líder** |
 | Samuel Duque | 202601757751 | Samuel-Duque-22 | integrante |
+| Vitória Camilly Costa Borges da Silva| 202601427695 | viicsilva | integrante |
 
 Cada integrante acrescenta a **sua própria linha** nesta tabela, pelo GitHub.
 Esse é o commit que registra a sua participação.
@@ -71,4 +79,4 @@ Os dois pontos (`..`) sobem uma pasta: saem do `frontend/` antes de entrar no
 - [ ] Ciclo 3 — `frontend/`: página com listas, tabela e formulário de contato
 - [ ] Ciclos 4 e 5 — `frontend/css/`: identidade visual, layout e responsividade
 - [ ] Ciclos 6 e 7 — `frontend/js/`: interação, validação e dados via JSON
-- [ ] Ciclos 8 a 10 — `backend/`: formulário que grava e lista do banco# respaw-do-codigo-jacare-
+- [ ] Ciclos 8 a 10 — `backend/`: formulário que grava e lista do banco
