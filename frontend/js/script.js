@@ -4,3 +4,6 @@
 // Ele já está ligado ao index.html pela linha
 // <script src="js/script.js" defer></script>
 // ===========================================================================
+function formatarPreco(valor) {
+  return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
