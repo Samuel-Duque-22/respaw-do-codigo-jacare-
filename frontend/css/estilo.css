@@ -118,3 +118,6 @@ select:focus-visible, textarea:focus-visible {
   background: #fff; border: 1px solid #e6d6b4; border-left: 6px solid var(--trigo);
   padding: 16px 18px; border-radius: 6px;
 }
+.produto h3 { margin: 0 0 4px; font-size: 1.15rem; }
+.produto p { margin: 0 0 10px; font-size: .95rem; color: var(--crosta-clara); }
+.produto .preco { font-weight: 600; color: var(--crosta); margin: 0; }
