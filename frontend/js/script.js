@@ -46,3 +46,16 @@ function mostrarProdutos() {
     (categoriaAtual === "Todos" || p.categoria === categoriaAtual) &&
     normalizar(p.nome + " " + p.descricao).includes(termo)
   );
+  listaProdutos.innerHTML = "";
+  filtrados.forEach(p => {
+    const item = document.createElement("li");
+    item.className = "produto";
+    item.innerHTML =
+      "<h3>" + p.nome + "</h3>" +
+      "<p>" + p.descricao + "</p>" +
+      '<p class="preco">' + formatarPreco(p.preco) + "</p>" +
+      '<button type="button" class="botao botao--pequeno" data-id="' + p.id + '">Adicionar</button>';
+    listaProdutos.appendChild(item);
+  });
+  semResultado.hidden = filtrados.length > 0;
+}
