@@ -22,3 +22,16 @@ $nome     = trim($_POST["nome"] ?? "");
 $email    = trim($_POST["email"] ?? "");
 $assunto  = trim($_POST["assunto"] ?? "");
 $mensagem = trim($_POST["mensagem"] ?? "");
+$erros = [];
+if (mb_strlen($nome) < 3) {
+    $erros[] = "Informe seu nome (mínimo 3 letras).";
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $erros[] = "Informe um e-mail válido.";
+}
+if ($assunto === "") {
+    $erros[] = "Selecione um assunto.";
+}
+if (mb_strlen($mensagem) < 10) {
+    $erros[] = "A mensagem precisa ter pelo menos 10 caracteres.";
+}
