@@ -140,3 +140,12 @@ input, select, textarea {
 }
 input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--brasa); }
 .erro { display: block; min-height: 1.2em; font-size: .9rem; color: var(--brasa); font-weight: 500; }
+/* Rodapé */
+.rodape { background: var(--crosta); color: var(--massa); text-align: center; padding: 24px 20px; }
+.rodape p { margin: 0 auto; font-size: .95rem; }
+
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  .secao { padding: 48px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
