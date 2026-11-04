@@ -118,3 +118,55 @@ function mudarQuantidade(id, diferenca) {
   if (nova <= 0) { delete carrinho[id]; } else { carrinho[id] = nova; }
   mostrarCarrinho();
 }
+listaProdutos.addEventListener("click", e => {
+  const botao = e.target.closest("button[data-id]");
+  if (botao) mudarQuantidade(Number(botao.dataset.id), 1);
+});
+listaCarrinho.addEventListener("click", e => {
+  const botao = e.target.closest("button[data-acao]");
+  if (!botao) return;
+  mudarQuantidade(Number(botao.dataset.id), botao.dataset.acao === "mais" ? 1 : -1);
+});
+btnLimpar.addEventListener("click", () => { carrinho = {}; mostrarCarrinho(); });
+
+// Monta o texto do pedido e leva o cliente ao formulário de contato.
+btnPedido.addEventListener("click", () => {
+  const linhas = produtos
+    .filter(p => carrinho[p.id])
+    .map(p => carrinho[p.id] + "x " + p.nome + " — " + formatarPreco(carrinho[p.id] * p.preco));
+  const total = produtos.reduce((soma, p) => soma + (carrinho[p.id] || 0) * p.preco, 0);
+
+  document.getElementById("assunto").value = "Encomenda";
+  document.getElementById("mensagem").value =
+    "Gostaria de encomendar:\n" + linhas.join("\n") + "\nTotal: " + formatarPreco(total);
+  document.getElementById("contato").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("nome").focus({ preventScroll: true });
+});
+
+// ---------- 3) Aberto agora? ----------
+// Domingo (0): 6h às 13h. Demais dias: 6h às 20h.
+function atualizarStatus() {
+  const agora = new Date();
+  const fecha = agora.getDay() === 0 ? 13 : 20;
+  const aberto = agora.getHours() >= 6 && agora.getHours() < fecha;
+  const el = document.getElementById("status");
+  el.textContent = aberto ? "Aberto agora · fecha às " + fecha + "h" : "Fechado agora · abre às 6h";
+  el.className = "status " + (aberto ? "status--aberto" : "status--fechado");
+}
+
+// ---------- 4) Modo noite ----------
+const btnTema = document.getElementById("btn-tema");
+
+function aplicarTema(tema) {
+  if (tema === "noite") {
+    document.documentElement.setAttribute("data-tema", "noite");
+  } else {
+    document.documentElement.removeAttribute("data-tema");
+  }
+  btnTema.setAttribute("aria-pressed", tema === "noite");
+  btnTema.textContent = tema === "noite" ? "Modo claro" : "Modo noite";
+  salvar("triguinho-tema", tema);
+}
+btnTema.addEventListener("click", () => {
+  aplicarTema(document.documentElement.hasAttribute("data-tema") ? "claro" : "noite");
+});
