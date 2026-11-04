@@ -94,3 +94,4 @@ select:focus-visible, textarea:focus-visible {
   padding: 12px 26px; border: 0; border-radius: 6px;
   background: var(--trigo); color: var(--crosta); text-decoration: none;
 }
+.botao:hover { background: #eab14f; }
