@@ -128,3 +128,7 @@ thead th { background: var(--crosta); color: var(--massa); }
 tbody th { font-weight: 600; }
 .lista { padding-left: 1.2rem; }
 .lista li { margin-bottom: 4px; }
+/* Formulário */
+form { max-width: 640px; }
+fieldset { border: 1px solid #cdb98d; border-radius: 8px; margin: 0 0 20px; padding: 8px 20px 18px; background: var(--farinha); }
+legend { font-family: var(--fonte-titulo); color: var(--crosta); padding: 0 8px; font-size: 1.15rem; }
