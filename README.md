@@ -16,6 +16,13 @@ Site de uma padaria com intuito de controlar vendas e cadastros de clientes. Sen
 | Nome completo | Matrícula | GitHub | Papel |
 |---|---|---|---|
 
+| Gustavo Ferreira Gomes | 202603139451 |gustavotur2018| integrante |
+
+
+
+
+
+
 Cada integrante acrescenta a **sua própria linha** nesta tabela, pelo GitHub.
 Esse é o commit que registra a sua participação.
 
