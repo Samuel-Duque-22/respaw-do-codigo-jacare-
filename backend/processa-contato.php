@@ -35,3 +35,18 @@ if ($assunto === "") {
 if (mb_strlen($mensagem) < 10) {
     $erros[] = "A mensagem precisa ter pelo menos 10 caracteres.";
 }
+if (count($erros) === 0) {
+    try {
+        $sql = "INSERT INTO contatos (nome, email, assunto, mensagem)
+                VALUES (:nome, :email, :assunto, :mensagem)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ":nome"     => $nome,
+            ":email"    => $email,
+            ":assunto"  => $assunto,
+            ":mensagem" => $mensagem,
+        ]);
+    } catch (PDOException $e) {
+        $erros[] = "Erro ao salvar a mensagem. Tente novamente.";
+    }
+}
