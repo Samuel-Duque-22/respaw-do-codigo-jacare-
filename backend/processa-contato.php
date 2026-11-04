@@ -18,3 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: ../frontend/index.html#contato");
     exit;
 }
+$nome     = trim($_POST["nome"] ?? "");
+$email    = trim($_POST["email"] ?? "");
+$assunto  = trim($_POST["assunto"] ?? "");
+$mensagem = trim($_POST["mensagem"] ?? "");
