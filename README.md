@@ -15,11 +15,11 @@ Site de uma padaria com intuito de controlar vendas e cadastros de clientes. Sen
 
 | Nome completo | Matrícula | GitHub | Papel |
 |---|---|---|---|
-
+| Ana Clara Assunção Freitas | 202603075109 | Anaclarassu | integrante |
 | Gustavo Ferreira Gomes | 202603139451 |gustavotur2018| integrante |
 | Iann Lima Fontoura | 202608373394 | fontouraiann06-lgtm | integrante |
 | Manoela Almeida Sanches Vieira | 202603057887 | manuxis3 | *líder* |
-| Ana Clara Assunção Freitas | 202603075109 | Anaclarassu | integrante |
+espaço para o samuel
 | Vitória Camilly Costa Borges da Silva| 202601427695 | viicsilva | integrante |
 
 
