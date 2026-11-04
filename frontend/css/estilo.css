@@ -101,3 +101,10 @@ select:focus-visible, textarea:focus-visible {
 .secao > p { margin-left: max(20px, calc((100% - 1040px) / 2)); margin-right: auto; }
 .secao--faixa { background: var(--massa); }
 .secao__intro { margin-top: 0; color: var(--crosta-clara); }
+/* Vitrine */
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px auto; }
+.filtros button {
+  font: 500 .95rem var(--fonte-texto); cursor: pointer;
+  padding: 8px 18px; border-radius: 999px;
+  border: 2px solid var(--crosta); background: transparent; color: var(--crosta);
+}
