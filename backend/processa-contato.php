@@ -50,3 +50,35 @@ if (count($erros) === 0) {
         $erros[] = "Erro ao salvar a mensagem. Tente novamente.";
     }
 }
+function limpar($texto) {
+    return htmlspecialchars($texto, ENT_QUOTES, "UTF-8");
+}
+//nao comprendi o codigo abaixo 
+?> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Padaria Triguinho</title>
+  <link rel="stylesheet" href="../frontend/css/estilo.css">
+</head>
+<body>
+  <main class="secao">
+    <?php if (count($erros) > 0): ?>
+      <h1>Não foi possível enviar</h1>
+      <ul class="lista">
+        <?php foreach ($erros as $erro): ?>
+          <li><?= limpar($erro) ?></li>
+        <?php endforeach; ?>
+      </ul>
+    <?php else: ?>
+      <h1>Mensagem recebida!</h1>
+      <p>Obrigado, <?= limpar($nome) ?>. Responderemos no e-mail <?= limpar($email) ?>.</p>
+      <p><strong>Assunto:</strong> <?= limpar($assunto) ?></p>
+      <p><strong>Mensagem:</strong> <?= limpar($mensagem) ?></p>
+    <?php endif; ?>
+    <p><a class="botao" href="../frontend/index.html#contato">Voltar ao site</a></p>
+  </main>
+</body>
+</html>
