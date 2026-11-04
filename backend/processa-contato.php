@@ -11,11 +11,10 @@
    <form action="../backend/processa-contato.php" method="post">
    =========================================================================== */
 <?php
-$nome = $_POST["nome"];
-$assunto = $_POST["assunto"];
+require __DIR__ . "/config/conexao.php";
 
-if (empty($nome)) {
-    die("Por favor, preencha seu nome.");
+// Só aceita envio pelo formulário (método POST).
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: ../frontend/index.html#contato");
+    exit;
 }
-
-echo "Recebido! Nome: " . $nome . ", Assunto: " . $assunto;
