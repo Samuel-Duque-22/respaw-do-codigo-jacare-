@@ -59,3 +59,17 @@ function mostrarProdutos() {
   });
   semResultado.hidden = filtrados.length > 0;
 }
+categorias.forEach(cat => {
+  const botao = document.createElement("button");
+  botao.type = "button";
+  botao.textContent = cat;
+  botao.setAttribute("aria-pressed", cat === "Todos");
+  botao.addEventListener("click", () => {
+    areaFiltros.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", "false"));
+    botao.setAttribute("aria-pressed", "true");
+    categoriaAtual = cat;
+    mostrarProdutos();
+  });
+  areaFiltros.appendChild(botao);
+});
+campoBusca.addEventListener("input", mostrarProdutos);
