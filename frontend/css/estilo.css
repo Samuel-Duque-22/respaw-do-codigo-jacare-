@@ -108,3 +108,9 @@ select:focus-visible, textarea:focus-visible {
   padding: 8px 18px; border-radius: 999px;
   border: 2px solid var(--crosta); background: transparent; color: var(--crosta);
 }
+.filtros button[aria-pressed="true"] { background: var(--crosta); color: var(--farinha); }
+
+.produtos {
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px;
+}
