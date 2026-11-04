@@ -114,3 +114,7 @@ select:focus-visible, textarea:focus-visible {
   list-style: none; padding: 0;
   display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px;
 }
+.produto {
+  background: #fff; border: 1px solid #e6d6b4; border-left: 6px solid var(--trigo);
+  padding: 16px 18px; border-radius: 6px;
+}
