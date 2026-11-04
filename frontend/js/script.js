@@ -29,3 +29,20 @@ const produtos = [
   { id: 8, nome: "Café coado", categoria: "Bebidas", descricao: "Passado a cada hora.", preco: 4.0 },
   { id: 9, nome: "Suco de laranja", categoria: "Bebidas", descricao: "Natural, 300 ml.", preco: 8.0 }
 ];
+const listaProdutos = document.getElementById("produtos");
+const areaFiltros = document.getElementById("filtros");
+const campoBusca = document.getElementById("busca");
+const semResultado = document.getElementById("sem-resultado");
+const categorias = ["Todos", ...new Set(produtos.map(p => p.categoria))];
+let categoriaAtual = "Todos";
+
+function normalizar(texto) {
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+function mostrarProdutos() {
+  const termo = normalizar(campoBusca.value.trim());
+  const filtrados = produtos.filter(p =>
+    (categoriaAtual === "Todos" || p.categoria === categoriaAtual) &&
+    normalizar(p.nome + " " + p.descricao).includes(termo)
+  );
