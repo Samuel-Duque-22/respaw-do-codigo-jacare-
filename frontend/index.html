@@ -3,62 +3,155 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projeto da disciplina ARA0062 — Equipe Delta.">
+    <meta name="description" content="Padaria Triguinho: vitrine de pães, doces e salgados, horários de funcionamento e contato. Projeto da disciplina ARA0062 — Equipe Jacaré.">
     <title>Padaria Triguinho — Equipe Jacaré</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
   </head>
 
   <body>
+    <a class="pular" href="#vitrine">Ir para a vitrine</a>
 
-    <header>
-      <h1>Padaria Triguinho</h1>
-      <p>Projeto da equipe Jacaré — ARA0062</p>
+    <header class="topo">
+      <div class="topo__interno">
+        <a class="marca" href="#inicio">Padaria Triguinho</a>
+        <nav aria-label="Principal">
+          <ul>
+            <li><a href="#vitrine">Vitrine</a></li>
+            <li><a href="#horarios">Horários</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#encomenda">Encomenda</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><button type="button" id="btn-tema" class="btn-tema" aria-pressed="false">Modo noite</button></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
 
     <main>
-      <section id="sobre">
-        <h2>Sobre o projeto</h2>
-        <p>
-          Este projeto é desenvolvido por alunos do curso de Análise e Desenvolvimento de Sistemas
-          da Newton Paiva, como parte da disciplina ARA0062. O objetivo é criar uma aplicação web
-          para a Padaria Triguinho, utilizando HTML, CSS, JavaScript e PHP. O intuito é fazer uma
-           vitrine de produtos, permitindo que os clientes visualizem os itens disponíveis e entrem 
-           em contato com a padaria.
-        </p>
+      <section class="hero" id="inicio">
+        <div class="hero__interno">
+          <p id="status" class="status" role="status">Verificando horário…</p>
+          <h1>Pão quente,<br>todo dia.</h1>
+          <p class="hero__texto">
+            Confira o que está na vitrine da Triguinho, veja os horários
+            e mande sua encomenda pelo formulário de contato.
+          </p>
+          <a class="botao" href="#vitrine">Ver a vitrine</a>
+        </div>
       </section>
 
-      <section id="contato">
-        <h2>Contato</h2>
-        <p>O formulário de contato.</p>
+      <section id="vitrine" class="secao">
+        <h2>Vitrine</h2>
+        <p class="secao__intro">Escolha uma categoria para filtrar os produtos.</p>
 
-        <form action="../backend/processa-contato.php" method="post">
+        <div class="campo busca">
+          <label for="busca">Buscar produto</label>
+          <input type="search" id="busca" placeholder="Ex.: pão, bolo, café">
+        </div>
+        <div class="filtros" id="filtros" role="group" aria-label="Categorias"></div>
+        <p id="sem-resultado" class="vazio" hidden>Nenhum produto encontrado.</p>
+        <ul class="produtos" id="produtos"></ul>
+      </section>
+
+      <section id="encomenda" class="secao secao--faixa">
+        <h2>Sua encomenda</h2>
+        <p class="secao__intro">Adicione produtos na vitrine. Ao enviar, o pedido vai para o formulário de contato.</p>
+        <p id="carrinho-vazio" class="vazio">Sua encomenda está vazia.</p>
+        <ul class="carrinho" id="carrinho"></ul>
+        <p class="total" id="total" hidden></p>
+        <div class="acoes">
+          <button type="button" class="botao" id="btn-pedido" hidden>Enviar pedido pelo contato</button>
+          <button type="button" class="botao botao--vazado" id="btn-limpar" hidden>Limpar encomenda</button>
+        </div>
+      </section>
+
+      <section id="horarios" class="secao">
+        <h2>Horários de funcionamento</h2>
+        <table>
+          <caption class="so-leitor">Horários de atendimento da padaria</caption>
+          <thead>
+            <tr><th scope="col">Dia</th><th scope="col">Abre</th><th scope="col">Fecha</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Segunda a sexta</th><td>06h</td><td>20h</td></tr>
+            <tr><th scope="row">Sábado</th><td>06h</td><td>20h</td></tr>
+            <tr><th scope="row">Domingo</th><td>06h</td><td>13h</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sobre" class="secao secao--faixa">
+        <h2>Sobre o projeto</h2>
+        <p>
+          Este site é um projeto de alunos de Análise e Desenvolvimento de Sistemas
+          da Newton Paiva, desenvolvido na disciplina ARA0062 com HTML, CSS,
+          JavaScript e PHP.
+        </p>
+        <p>
+          O objetivo é criar uma vitrine para a Padaria Triguinho, onde o cliente
+          vê os produtos disponíveis e entra em contato com a padaria. Nas próximas
+          etapas, o sistema também vai controlar vendas e cadastro de clientes.
+        </p>
+        <h3>O que o site faz hoje</h3>
+        <ul class="lista">
+          <li>Mostra os produtos por categoria.</li>
+          <li>Informa se a padaria está aberta agora.</li>
+          <li>Busca produtos e monta uma encomenda com total em reais.</li>
+          <li>Alterna entre modo claro e modo noite, e lembra a escolha.</li>
+          <li>Recebe mensagens pelo formulário de contato, com validação.</li>
+        </ul>
+      </section>
+
+      <section id="contato" class="secao">
+        <h2>Contato</h2>
+        <p class="secao__intro">Preencha os campos abaixo. Os campos com * são obrigatórios.</p>
+
+        <form id="form-contato" action="../backend/processa-contato.php" method="post" novalidate>
           <fieldset>
             <legend>Seus dados</legend>
-            <div>
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" required>
+            <div class="campo">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required>
+              <span class="erro" id="erro-nome"></span>
             </div>
-            <div>
-              <label for="assunto">Assunto</label>
-              <select id="assunto" name="assunto"> ...  </select>
+            <div class="campo">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <span class="erro" id="erro-email"></span>
             </div>
           </fieldset>
-          <button type="submit">Enviar</button>
+
+          <fieldset>
+            <legend>Sua mensagem</legend>
+            <div class="campo">
+              <label for="assunto">Assunto *</label>
+              <select id="assunto" name="assunto" required>
+                <option value="">Selecione…</option>
+                <option>Encomenda</option>
+                <option>Dúvida</option>
+                <option>Sugestão</option>
+                <option>Elogio ou reclamação</option>
+              </select>
+              <span class="erro" id="erro-assunto"></span>
+            </div>
+            <div class="campo">
+              <label for="mensagem">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+              <span class="erro" id="erro-mensagem"></span>
+            </div>
+          </fieldset>
+
+          <button class="botao" type="submit">Enviar mensagem</button>
         </form>
       </section>
     </main>
 
-    <footer>
-      <p>Equipe Jacaré &middot; 2026 &middot; ARA0062 &middot; Newton Paiva</p>
+    <footer class="rodape">
+      <p>Padaria Triguinho &middot; Equipe Jacaré &middot; ARA0062 &middot; Newton Paiva &middot; 2026</p>
     </footer>
 
     <script src="js/script.js" defer></script>
