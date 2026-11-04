@@ -95,3 +95,9 @@ select:focus-visible, textarea:focus-visible {
   background: var(--trigo); color: var(--crosta); text-decoration: none;
 }
 .botao:hover { background: #eab14f; }
+/* Seções */
+.secao { padding: 64px 20px; }
+.secao > * { max-width: 1040px; margin-left: auto; margin-right: auto; }
+.secao > p { margin-left: max(20px, calc((100% - 1040px) / 2)); margin-right: auto; }
+.secao--faixa { background: var(--massa); }
+.secao__intro { margin-top: 0; color: var(--crosta-clara); }
