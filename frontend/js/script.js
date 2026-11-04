@@ -73,3 +73,48 @@ categorias.forEach(cat => {
   areaFiltros.appendChild(botao);
 });
 campoBusca.addEventListener("input", mostrarProdutos);
+let carrinho = lerSalvo("triguinho-carrinho", {});
+
+const listaCarrinho = document.getElementById("carrinho");
+const textoVazio = document.getElementById("carrinho-vazio");
+const textoTotal = document.getElementById("total");
+const btnPedido = document.getElementById("btn-pedido");
+const btnLimpar = document.getElementById("btn-limpar");
+
+function mostrarCarrinho() {
+  listaCarrinho.innerHTML = "";
+  let total = 0;
+  let quantidadeItens = 0;
+
+  produtos.forEach(p => {
+    const qtd = carrinho[p.id] || 0;
+    if (qtd === 0) return;
+    total += qtd * p.preco;
+    quantidadeItens += qtd;
+
+    const li = document.createElement("li");
+    li.innerHTML =
+      '<span class="item__nome">' + p.nome + "</span>" +
+      '<span class="item__qtd">' +
+        '<button type="button" data-acao="menos" data-id="' + p.id + '" aria-label="Diminuir ' + p.nome + '">−</button>' +
+        "<span>" + qtd + "</span>" +
+        '<button type="button" data-acao="mais" data-id="' + p.id + '" aria-label="Aumentar ' + p.nome + '">+</button>' +
+      "</span>" +
+      '<span class="item__sub">' + formatarPreco(qtd * p.preco) + "</span>";
+    listaCarrinho.appendChild(li);
+  });
+
+  const temItens = quantidadeItens > 0;
+  textoVazio.hidden = temItens;
+  textoTotal.hidden = !temItens;
+  btnPedido.hidden = !temItens;
+  btnLimpar.hidden = !temItens;
+  textoTotal.textContent = "Total: " + formatarPreco(total);
+  salvar("triguinho-carrinho", carrinho);
+}
+
+function mudarQuantidade(id, diferenca) {
+  const nova = (carrinho[id] || 0) + diferenca;
+  if (nova <= 0) { delete carrinho[id]; } else { carrinho[id] = nova; }
+  mostrarCarrinho();
+}
