@@ -170,3 +170,40 @@ function aplicarTema(tema) {
 btnTema.addEventListener("click", () => {
   aplicarTema(document.documentElement.hasAttribute("data-tema") ? "claro" : "noite");
 });
+const form = document.getElementById("form-contato");
+
+function mostrarErro(campo, mensagem) {
+  document.getElementById("erro-" + campo.id).textContent = mensagem;
+  campo.setAttribute("aria-invalid", mensagem ? "true" : "false");
+  return mensagem === "";
+}
+
+function validarCampos() {
+  const nome = form.nome, email = form.email, assunto = form.assunto, mensagem = form.mensagem;
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+
+  const resultados = [
+    mostrarErro(nome, nome.value.trim().length < 3 ? "Digite seu nome (mínimo 3 letras)." : ""),
+    mostrarErro(email, emailValido ? "" : "Digite um e-mail válido, como nome@email.com."),
+    mostrarErro(assunto, assunto.value === "" ? "Selecione um assunto." : ""),
+    mostrarErro(mensagem, mensagem.value.trim().length < 10 ? "Escreva pelo menos 10 caracteres." : "")
+  ];
+  return resultados.every(ok => ok);
+}
+
+form.addEventListener("submit", evento => {
+  if (!validarCampos()) {
+    evento.preventDefault();
+    form.querySelector('[aria-invalid="true"]').focus();
+  } else {
+    // Pedido enviado: esvazia a encomenda.
+    carrinho = {};
+    salvar("triguinho-carrinho", carrinho);
+  }
+});
+
+// ---------- Início ----------
+aplicarTema(lerSalvo("triguinho-tema", "claro"));
+atualizarStatus();
+mostrarProdutos();
+mostrarCarrinho();
